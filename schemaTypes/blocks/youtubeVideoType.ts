@@ -3,7 +3,7 @@ import {defineField, defineType} from 'sanity'
 export default defineType({
   name: 'youtubeVideo',
   title: 'YouTube Video',
-  type: 'object',
+  type: 'document',
   fields: [
     defineField({
       name: 'label',

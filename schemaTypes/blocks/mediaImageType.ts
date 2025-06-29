@@ -36,7 +36,6 @@ export default defineType({
       title: 'Width',
       type: 'string',
       description: 'Width of the image (e.g., "300px", "50%", "auto")',
-      initialValue: 'auto',
     }),
     defineField({
       name: 'borderRadius',

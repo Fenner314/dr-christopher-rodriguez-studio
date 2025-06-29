@@ -16,8 +16,10 @@ import sectionType from './blocks/sectionType'
 import titleType from './blocks/titleType'
 import textBlockType from './blocks/textBlockType'
 import testimonialType from './blocks/testimonialType'
+import testimonialGalleryType from './blocks/testimonialGalleryType'
 import galleryType from './blocks/galleryType'
 import columnType from './blocks/columnType'
+import videoGalleryType from './blocks/videoGalleryType'
 
 export const schemaTypes = [
   blockContentType,
@@ -38,6 +40,8 @@ export const schemaTypes = [
   titleType,
   textBlockType,
   testimonialType,
+  testimonialGalleryType,
   galleryType,
   columnType,
+  videoGalleryType,
 ]

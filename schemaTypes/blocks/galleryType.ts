@@ -23,7 +23,6 @@ export default defineType({
       description: 'Type of content to display in the gallery',
       options: {
         list: [
-          {title: 'YouTube Videos', value: 'youtubeVideos'},
           {title: 'Media Images', value: 'mediaImages'},
           {title: 'Testimonials', value: 'testimonials'},
         ],
