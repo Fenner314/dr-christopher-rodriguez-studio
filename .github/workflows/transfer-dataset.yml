@@ -1,0 +1,44 @@
+name: Sanity Dataset Transfer
+
+on:
+  workflow_dispatch:
+    inputs:
+      destination:
+        description: 'Transfer direction'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - test
+
+jobs:
+  transfer:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./  # make sure this is your Sanity project directory
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Transfer Sanity dataset
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
+        run: |
+          if [[ "${{ github.event.inputs.destination }}" == "test" ]]; then
+            npx sanity dataset export production export.tar.gz
+            npx sanity dataset import export.tar.gz --replace --dataset test
+          else
+            npx sanity dataset export test export.tar.gz
+            npx sanity dataset import export.tar.gz --replace --dataset production
+          fi
