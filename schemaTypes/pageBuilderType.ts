@@ -6,6 +6,7 @@ export default defineType({
   of: [
     defineArrayMember({type: 'hero'}),
     defineArrayMember({type: 'section'}),
+    defineArrayMember({type: 'row'}),
     defineArrayMember({type: 'title'}),
     defineArrayMember({type: 'textBlock'}),
     defineArrayMember({type: 'button'}),

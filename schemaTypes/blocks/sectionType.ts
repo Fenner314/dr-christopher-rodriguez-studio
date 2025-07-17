@@ -46,6 +46,7 @@ export default defineType({
       type: 'array',
       description: 'Content blocks within this section',
       of: [
+        {type: 'row'},
         {type: 'column'},
         {type: 'title'},
         {type: 'textBlock'},

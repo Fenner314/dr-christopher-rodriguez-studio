@@ -19,6 +19,7 @@ import testimonialType from './blocks/testimonialType'
 import testimonialGalleryType from './blocks/testimonialGalleryType'
 import galleryType from './blocks/galleryType'
 import columnType from './blocks/columnType'
+import rowType from './blocks/rowType'
 import videoGalleryType from './blocks/videoGalleryType'
 
 export const schemaTypes = [
@@ -43,5 +44,6 @@ export const schemaTypes = [
   testimonialGalleryType,
   galleryType,
   columnType,
+  rowType,
   videoGalleryType,
 ]
