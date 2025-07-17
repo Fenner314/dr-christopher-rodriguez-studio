@@ -35,6 +35,7 @@ jobs:
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
         run: |
+          npx sanity login --token "$SANITY_AUTH_TOKEN"
           if [[ "${{ github.event.inputs.destination }}" == "test" ]]; then
             npx sanity dataset export production export.tar.gz
             npx sanity dataset import export.tar.gz --replace --dataset test
