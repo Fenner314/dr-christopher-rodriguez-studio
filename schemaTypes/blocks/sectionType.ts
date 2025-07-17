@@ -57,6 +57,7 @@ export default defineType({
         {type: 'testimonial'},
         {type: 'testimonialGallery'},
         {type: 'customComponent'},
+        {type: 'downloads'},
       ],
     }),
     defineField({

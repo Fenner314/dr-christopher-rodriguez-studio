@@ -17,6 +17,12 @@ export default defineType({
       description: 'Title for this downloads section (optional)',
     }),
     defineField({
+      name: 'description',
+      title: 'Section Description',
+      type: 'textBlock',
+      description: 'Description for this downloads section (optional)',
+    }),
+    defineField({
       name: 'items',
       title: 'Download Items',
       type: 'array',
