@@ -37,8 +37,8 @@ jobs:
         run: |
           if [[ "${{ github.event.inputs.destination }}" == "test" ]]; then
             SANITY_AUTH_TOKEN="$SANITY_AUTH_TOKEN" npx sanity dataset export production export.tar.gz
-            SANITY_AUTH_TOKEN="$SANITY_AUTH_TOKEN" npx sanity dataset import export.tar.gz test
+            SANITY_AUTH_TOKEN="$SANITY_AUTH_TOKEN" npx sanity dataset import export.tar.gz test --replace
           else
             SANITY_AUTH_TOKEN="$SANITY_AUTH_TOKEN" npx sanity dataset export test export.tar.gz
-            SANITY_AUTH_TOKEN="$SANITY_AUTH_TOKEN" npx sanity dataset import export.tar.gz production
+            SANITY_AUTH_TOKEN="$SANITY_AUTH_TOKEN" npx sanity dataset import export.tar.gz production --replace
           fi
